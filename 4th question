@@ -1,0 +1,20 @@
+#Tower of Hanoi Problem
+#Write a recursive solution to the Tower of Hanoi problem, where you need to move `n` disks
+#from a source pole to a destination pole, using a temporary pole.
+#You can only move one disk at a time, and no disk may be placed on top of a smaller disk.
+#Input Format
+#Input: An integer n representing the number of disks.
+#Output Format
+#pole.
+#Output: The sequence of moves to transfer the disks from the source pole to the destination
+
+def tower_of_hanoi(n, source, destination, temporary):
+    if n == 1:
+        print(f"Move disk 1 from {source} to {destination}")
+    else:
+        tower_of_hanoi(n-1, source, temporary, destination)
+    
+        print(f"Move disk {n} from {source} to {destination}")
+        tower_of_hanoi(n-1, temporary, destination, source)
+n = int(input("Enter the number of disks: "))
+tower_of_hanoi(n, 'A', 'C', 'B')  # A is source, C

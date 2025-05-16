@@ -1,0 +1,17 @@
+#Find the Nth Fibonacci Number Using Recursion
+#Write a recursive function to find the Nth Fibonacci number.
+#The function should return the Nth number in the Fibonacci series.
+#Input Format
+#Input: A positive integer n representing the position in the Fibonacci sequence.
+#Output Format
+#Output: The nth Fibonacci number.
+
+
+
+
+from math import sqrt 
+def nthFib(n):
+    res = (((1+sqrt(5))**n)-((1-sqrt(5)))**n)/(2**n*sqrt(5))
+    print(int(res),'is',str(n)+'th fibonacci number')
+nthFib(12)
+

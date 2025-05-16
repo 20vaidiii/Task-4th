@@ -1,0 +1,19 @@
+#Find the Largest Prime Factor
+##Given a positive integer `n`, find its largest prime factor.
+#You need to find an efficient solution (less than O(n)).
+#Input Format
+#Input: A positive integer n.
+#Output Format
+#Output: The largest prime factor of the given number.
+
+def largest_prime_factor(n):
+  largest_factor = 1
+  i = 2
+  while i * i <= n:
+    while n % i == 0:
+      largest_factor = i
+      n //= i
+    i += 1
+  if n > 1:
+    largest_factor = n
+  return largest_factor

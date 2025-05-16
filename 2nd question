@@ -1,0 +1,19 @@
+#Write a function that calculates `x^y` (x raised to the power y) using recursion.
+#The function should work for both positive and negative exponents.
+#Input Format
+#Input: Two integers x and y.
+#Output Format
+#Output: x raised to the power y (x^y).
+
+
+def power(x, y):
+    if y == 0:
+        return 1
+    elif y > 0:
+        return x * power(x, y - 1)
+    else:
+        return 1 / power(x, -y)
+x = int(input("Enter base (x): "))
+y = int(input("Enter exponent (y): "))
+result = power(x, y)
+print(f"{x}^{y} = {result}")
